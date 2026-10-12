@@ -1,0 +1,170 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --primary: #4f46e5;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #22c55e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 16px;
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-top: 12px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.test-card {
+    background-color: var(--card-bg);
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.test-card:active {
+    transform: scale(0.97);
+}
+
+.test-card .icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.test-card h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.test-card p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Modal Yapısı */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #334155;
+    margin-bottom: 16px;
+}
+
+.close-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.btn-action {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+    width: 100%;
+}
+
+/* Tam Ekran Modu (Renk ve Dokunmatik için) */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.fullscreen-overlay.hidden {
+    display: none;
+}
+
+.fullscreen-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}

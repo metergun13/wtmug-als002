@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Android Donanım Test PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4f46e5">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Pixel 7 Donanım Testi</h1>
+            <p>Android 14 PWA Test Aracı</p>
+        </header>
+
+        <main class="grid-menu">
+            <button class="test-card" onclick="openScreenTest()">
+                <span class="icon">🎨</span>
+                <h3>Ekran Renkleri</h3>
+                <p>Ölü piksel ve tam ekran renk</p>
+            </button>
+
+            <button class="test-card" onclick="openTouchTest()">
+                <span class="icon">👆</span>
+                <h3>Dokunmatik Ekran</h3>
+                <p>Tam ekran çoklu dokunma ve çizim</p>
+            </button>
+
+            <button class="test-card" onclick="openAudioTest()">
+                <span class="icon">🔊</span>
+                <h3>Hoparlör Testi</h3>
+                <p>Frekans ve ses çıkışı</p>
+            </button>
+
+            <button class="test-card" onclick="openMicTest()">
+                <span class="icon">🎤</span>
+                <h3>Mikrofon Testi</h3>
+                <p>Ses kaydı ve görselleştirme</p>
+            </button>
+
+            <button class="test-card" onclick="openVibrationTest()">
+                <span class="icon">📳</span>
+                <h3>Titreşim Motoru</h3>
+                <p>Farklı titreşim paternleri</p>
+            </button>
+
+            <button class="test-card" onclick="openNetworkTest()">
+                <span class="icon">🌐</span>
+                <h3>İnternet Bağlantısı</h3>
+                <p>Ağ durumu ve gecikme (Ping)</p>
+            </button>
+
+            <button class="test-card" onclick="openGpsTest()">
+                <span class="icon">📍</span>
+                <h3>GPS / Konum Testi</h3>
+                <p>Enlem, boylam ve hız takibi</p>
+            </button>
+        </main>
+    </div>
+
+    <!-- Test Pencereleri / Modaller -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-header">
+            <h2 id="modal-title">Test</h2>
+            <button class="close-btn" onclick="closeModal()">Kapat &times;</button>
+        </div>
+        <div id="modal-body" class="modal-body">
+            <!-- Dinamik içerikler buraya yüklenecek -->
+        </div>
+    </div>
+
+    <!-- Tam Ekran Overlay (Ekran ve Çizim Testi İçin) -->
+    <div id="fullscreen-overlay" class="fullscreen-overlay hidden">
+        <button class="fullscreen-close" onclick="closeFullscreen()">Çıkış &times;</button>
+        <div id="fullscreen-content" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
